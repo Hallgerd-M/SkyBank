@@ -1,0 +1,82 @@
+{
+    "greeting": "Добрый вечер",
+    "cards": [
+        {
+            "last_digits": "7197",
+            "total_spent": 245.77,
+            "cashback": 2.46
+        },
+        {
+            "last_digits": "5091",
+            "total_spent": 153.93,
+            "cashback": 1.54
+        },
+        {
+            "last_digits": "4556",
+            "total_spent": 40.76,
+            "cashback": 0.41
+        },
+        {
+            "last_digits": "1112",
+            "total_spent": 0.0,
+            "cashback": 0.0
+        },
+        {
+            "last_digits": "5507",
+            "total_spent": 0.0,
+            "cashback": 0.0
+        },
+        {
+            "last_digits": "6002",
+            "total_spent": 0.0,
+            "cashback": 0.0
+        },
+        {
+            "last_digits": "5441",
+            "total_spent": 0.0,
+            "cashback": 0.0
+        }
+    ],
+    "top_transcations": [
+        {
+            "date": "30.12.2021",
+            "amount": 174000.0,
+            "category": "Пополнения",
+            "description": "Пополнение через Газпромбанк"
+        },
+        {
+            "date": "23.12.2021",
+            "amount": 28001.94,
+            "category": "Переводы",
+            "description": "Перевод Кредитная карта. ТП 10.2 RUR"
+        },
+        {
+            "date": "23.12.2021",
+            "amount": 28001.94,
+            "category": "Переводы",
+            "description": "Перевод Кредитная карта. ТП 10.2 RUR"
+        },
+        {
+            "date": "31.12.2021",
+            "amount": 20000.0,
+            "category": "Переводы",
+            "description": "Константин Л."
+        },
+        {
+            "date": "23.12.2021",
+            "amount": 20000.0,
+            "category": "Другое",
+            "description": "Иван С."
+        }
+    ],
+    "currency_rates": [
+        {
+            "currency": "USD",
+            "rate": 88.0
+        },
+        {
+            "currency": "EUR",
+            "rate": 95.85
+        }
+    ]
+}
