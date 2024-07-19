@@ -1,17 +1,18 @@
 import datetime
 import json
+import logging
 from datetime import timedelta
 from typing import Any, Callable
-import logging
 
 import pandas as pd
 
 logger = logging.getLogger("report.log")
 file_handler = logging.FileHandler("report.log", "w")
-file_formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s')
+file_formatter = logging.Formatter("%(asctime)s %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 logger.setLevel(logging.INFO)
+
 
 def decorator_spending_by_cat(func: Callable) -> Callable:
     """Логирует результат функции в файл по умолчанию spending_by_cat.json"""
@@ -67,7 +68,9 @@ def spending_by_category(
 ) -> pd.DataFrame:
     """Возвращает DataFrame по заданной категории за 3 месяца от указанной даты"""
     logger.info("Start")
-    logger.info("Creating filtered list by date for last 3 months with another function")
+    logger.info(
+        "Creating filtered list by date for last 3 months with another function"
+    )
     transactions_filtered_by_3_months = filtering_by_date(transactions, date)
     logger.info("Filtering transactions by category")
     category_transcations = transactions_filtered_by_3_months[

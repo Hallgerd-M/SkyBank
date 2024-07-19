@@ -196,8 +196,8 @@ def fetch_and_show_currency_rates() -> List[Dict[str, Any]]:
         return [{}]
 
 
-#exchange_rates = fetch_and_show_currency_rates()
-#print(exchange_rates)
+# exchange_rates = fetch_and_show_currency_rates()
+# print(exchange_rates)
 
 
 def fetch_and_show_stock_prices() -> List[Dict[str, Any]]:
