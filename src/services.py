@@ -1,13 +1,13 @@
-import json
-from typing import Any, Dict, List
 import datetime
+import json
 import logging
+from typing import Any, Dict, List
 
 from src.utils import get_xlsx_data_dict
 
 logger = logging.getLogger("services.log")
 file_handler = logging.FileHandler("services.log", "w")
-file_formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s')
+file_formatter = logging.Formatter("%(asctime)s %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 logger.setLevel(logging.INFO)
@@ -15,7 +15,7 @@ logger.setLevel(logging.INFO)
 
 def investment_bank(
     month: str, transactions: List[Dict[str, Any]], limit: int
-) -> float:
+) -> List[Dict[str, int]]:
     """Рассчитывает сумму на счету инвесткопилки по заданному порогу округления"""
     logger.info("Start")
     period = datetime.datetime.strptime(month, "%Y-%m")
@@ -23,7 +23,9 @@ def investment_bank(
     transactions_list = []
     investment_bank_sum = 0
     print(type(transactions))
-    logger.info("Filtering transactions by date and putting their sum into filtered transactions list")
+    logger.info(
+        "Filtering transactions by date and putting their sum into filtered transactions list"
+    )
     for transaction in transactions:
         transaction_date = transaction["operation_date"]
         payment_date = datetime.datetime.strptime(transaction_date, "%d.%m.%Y %H:%M:%S")
