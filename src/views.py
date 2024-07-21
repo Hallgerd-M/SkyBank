@@ -38,7 +38,6 @@ def main_page(date: str) -> Dict:
     main_dict["top_transcations"] = top_transcations
     main_dict["currency_rates"] = currency_rates
     logger.info("Writing info into json-file")
-    with open("main.json", "w", encoding="utf-8") as f:
-        json.dump(main_dict, f, ensure_ascii=False, indent=4)
+    main_dict_jsons = json.dumps(main_dict)
     logger.info("Stop")
-    return main_dict
+    return main_dict_jsons

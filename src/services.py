@@ -15,14 +15,13 @@ logger.setLevel(logging.INFO)
 
 def investment_bank(
     month: str, transactions: List[Dict[str, Any]], limit: int
-) -> List[Dict[str, int]]:
+) -> str:
     """Рассчитывает сумму на счету инвесткопилки по заданному порогу округления"""
     logger.info("Start")
     period = datetime.datetime.strptime(month, "%Y-%m")
     logger.info("Creating filtered transactions list")
     transactions_list = []
     investment_bank_sum = 0
-    print(type(transactions))
     logger.info(
         "Filtering transactions by date and putting their sum into filtered transactions list"
     )
@@ -41,10 +40,9 @@ def investment_bank(
     result_dict = {}
     result_dict["investment_bank"] = round(investment_bank_sum, 2)
     result_list.append(result_dict)
-    with open("investment_bank.json", "w") as f:
-        json.dump(result_list, f)
+    result_list_jsons = json.dumps(result_list)
     logger.info("Stop")
-    return result_list
+    return result_list_jsons
 
 
 transactions = get_xlsx_data_dict("../data/operations.xlsx")
